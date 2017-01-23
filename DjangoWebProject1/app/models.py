@@ -6,7 +6,7 @@ from django.db import models
 
 
 class Category(models.Model):
-    name = models.CharField('Tematyka', max_length=100)
+    name = models.CharField('Nazwa Kategorii', max_length=100)
     slug = models.SlugField('Odnośnik', unique=True, max_length=100)
     icon = models.ImageField('Ikonka Kategorii', upload_to='icons',
                               blank=True)
