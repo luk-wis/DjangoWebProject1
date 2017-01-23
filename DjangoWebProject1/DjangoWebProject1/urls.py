@@ -3,8 +3,10 @@ Definition of urls for DjangoWebProject1.
 """
 
 from datetime import datetime
-from django.conf.urls import url
+from django.conf.urls import url, include 
 import django.contrib.auth.views
+from django.contrib import admin
+admin.autodiscover()
 
 import app.forms
 import app.views
@@ -16,6 +18,7 @@ import app.views
 
 urlpatterns = [
     # Examples:
+    url(r'^admin/', include(admin.site.urls)),
     url(r'^$', app.views.home, name='home'),
     url(r'^contact$', app.views.contact, name='contact'),
     url(r'^about', app.views.about, name='about'),
